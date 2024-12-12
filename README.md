@@ -86,7 +86,10 @@ function _update(
    - During Phase 4, no checks are made that would lead to external calls. The `_update` function simply executes `super._update(from, to, amount)` without invoking any additional logic that could interact with external contracts.
 
 3. **Definitive Proof**:
+
    - The absence of whitelist or trading restrictions in Phase 4 confirms that no external calls are triggered. All external contract interactions cease after Phase 3.
+   - A test script was implemented to simulate transactions during Phase 4. It uses a mock external contract (`WhitelistMock`) to detect any calls made by the `_update` function. The test confirms no external calls occur during Phase 4 by checking the mock's state.
+   The mock external contract `WhitelistMock` contains a `wasCalled` flag to detect any interactions. During testing, the flag remains `false`, proving no external calls are made.
 
 ## Conclusion
 The `_update` function does **not** make any external calls during **Phase 4**, as:
