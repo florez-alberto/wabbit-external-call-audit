@@ -26,21 +26,6 @@ This project includes a test suite for the `_update` function in `test/externalT
    npx hardhat test
    ```
 
-3. To simulate gas reporting:
-   ```shell
-   REPORT_GAS=true npx hardhat test
-   ```
-
-### Additional Hardhat Commands
-- Start a local Hardhat node:
-  ```shell
-  npx hardhat node
-  ```
-- Deploy contracts (example):
-  ```shell
-  npx hardhat deploy
-  ```
-
 ## Contract Analysis
 
 The critical section of the `_update` function is as follows:
